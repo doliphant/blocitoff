@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :list do
-    title "MyString"
-user nil
+    title "Original Title"
+# user nil
   end
 
 end

@@ -1,2 +1,8 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>Create a new ToDo list</h1>
+
+<%= form_for @list do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit "Save" %>
+<% end %>
