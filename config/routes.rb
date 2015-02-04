@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :lists, except: [:index]
+
   devise_for :users
   get 'welcome/list'
   get 'welcome/index'
