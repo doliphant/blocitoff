@@ -23,10 +23,30 @@ before_action :authenticate_user!
   end
 
   def edit
+    @list = current_user.list
   end
 
   def update
-    redirect_to :root
+    @list = current_user.list
+    if @list.update_attributes(params.require(:list).permit(:title))
+      flash[:notice] = "List Title has been updated."
+      redirect_to @list
+    else
+      flash[:error] = "There was an error updating the list."
+      render :edit
+    end
   end
 
+  def destroy
+    @list = current_user.list
+    name = @list.title
+
+    if @list.destroy
+      flash[:notice] = "\"#{name}\" was deleted successfully."
+      redirect_to new_list_path
+    else
+      flash[:error] = "There was an error deleting the list."
+      render :show
+    end
+  end
 end
