@@ -3,6 +3,7 @@ before_action :authenticate_user!
 
   def show
     @list = current_user.list
+    @items = @list.items
   end
 
   def new
