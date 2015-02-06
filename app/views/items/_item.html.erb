@@ -1,21 +1,12 @@
 
 
-<% if items.empty? %>
-  <p> You have nothing ToDO. </p>
-<% else %>
-  <% items.each do |item| %>
+
     <div class="row">
       <p> <%= item.name %>
         <small>
-          <i> created at <%= item.created_at %> </i>
+          <i> created at <%= item.created_at %>   </i>
             <!-- time_ago_in_words messes up the syntax, not sure why -->
+            <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
         </small>
       </p>
     </div>
-  <% end %>
-<% end %>
-
-
-
-
-<!-- destroy option will go here  -->
