@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  get 'welcome/list'
   get 'welcome/index'
+  get 'lists/show'
 
-  root to: 'welcome#index'
+  root to: 'lists#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

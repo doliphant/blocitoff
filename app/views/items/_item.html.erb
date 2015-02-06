@@ -1,5 +1,21 @@
 
 
-<p> <%=item.name%> </p>
+<% if items.empty? %>
+  <p> You have nothing ToDO. </p>
+<% else %>
+  <% items.each do |item| %>
+    <div class="row">
+      <p> <%= item.name %>
+        <small>
+          <i> created at <%= item.created_at %> </i>
+            <!-- time_ago_in_words messes up the syntax, not sure why -->
+        </small>
+      </p>
+    </div>
+  <% end %>
+<% end %>
+
+
+
 
 <!-- destroy option will go here  -->

@@ -1,12 +1,8 @@
 class WelcomeController < ApplicationController
 
   def index
-    @user = current_user
-    @list = current_user.list
+    @user = current_user  
   end
 
-
-  def list
-  end
 
 end

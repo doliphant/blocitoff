@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def create
     @list = current_user.list
     @item = current_user.list.items.build(params.require(:item).permit(:name))
-    @item.list = @list
+    # @item.list = @list
 
     if @item.save
       flash[:notice] = "Item added to List."
