@@ -10,6 +10,9 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'whenever', :require => false
+
+
 #securing environment variables
 gem 'figaro', '1.0'
 

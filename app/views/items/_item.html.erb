@@ -4,7 +4,7 @@
     <div class="row">
       <p> <%= item.name %>
         <small>
-          <i> created <%= time_ago_in_words(item.created_at) %> ago </i>
+          <i> <%= item.days_left %> days left </i>
             <%= link_to "", [list, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
         </small>
       </p>
