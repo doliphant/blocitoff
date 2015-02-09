@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   get 'items/new'
 
   resources :lists, except: [:index] do
-    resources :items, only: [:create, :destroy]
+    resources :items, only: [:create, :destroy] do
+      # member :completed
+    end
   end
 
-  resources :items
+  # resources :items
 
   devise_for :users
   get 'welcome/index'

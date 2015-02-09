@@ -1,6 +1,6 @@
 <!-- for adding items to list in lists#show -->
 
-<%= form_for [list, list.items.new], remote: true do |f| %>
+<%= form_for [list, Item.new], remote: true do |f| %>
   <h4>Add a ToDo</h4>
 
   <div class="form-group">

@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  respond_to :html, :js
+
   # def new
   #   @item = Item.new
   # end
@@ -7,16 +9,21 @@ class ItemsController < ApplicationController
   def create
     @list = current_user.list
     @item = @list.items.build(item_params)
+    @new_item = Item.new
     # @item.list = @list
 
     if @item.save
       flash[:notice] = "ToDo item added to List."
-# switched from @list to @item or [@list, @item] and now it at least shows flash notice on refresh
-      redirect_to @item
+      # redirect_to @list
     else
       flash[:error] = "There was an error adding an item to the list."
-      redirect_to @list
+      # redirect_to @list
     end
+
+    respond_with(@item) do |format|
+      format.html { redirect_to [@list] }
+    end
+
   end
 
   def destroy
@@ -25,11 +32,23 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash[:notice] = "ToDo item removed."
-      redirect_to @list
+      # redirect_to @list
     else
       flash[:error] = "Item could not be removed."
-      redirect_to @list
+      # redirect_to @list
     end
+
+    respond_with(@item) do |format|
+      format.html { redirect_to [@list] }
+    end
+
+  end
+
+  def completed
+    #migrate a completed_at time into items
+    #nest in routes (done)
+    #completed will update completed at value
+    #edit show to only show incomplete
   end
 
 

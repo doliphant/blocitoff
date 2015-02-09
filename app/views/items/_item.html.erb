@@ -4,9 +4,8 @@
     <div class="row">
       <p> <%= item.name %>
         <small>
-          <i> created at <%= item.created_at %>   </i>
-            <!-- time_ago_in_words messes up the syntax, not sure why -->
-            <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
+          <i> created <%= time_ago_in_words(item.created_at) %> ago </i>
+            <%= link_to "", [list, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
         </small>
       </p>
     </div>
