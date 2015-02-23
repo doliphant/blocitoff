@@ -1,7 +1,8 @@
 
 <% if @item.valid? %>
-  $('.js-items').append("<%= escape_javascript(render partial: 'items/item', locals: { list: @list, item: @item }) %>");
+  $('#list-table').append("<%= escape_javascript(render partial: 'items/item', locals: { list: @list, item: @item }) %>");
   $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { list: @list, item: @new_item }) %>");
+  $('#flash-message').html("<%= escape_javascript(render partial: 'common/flash') %>");
 <% else %>
   $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { list: @list, item: @item }) %>");
 <% end %>

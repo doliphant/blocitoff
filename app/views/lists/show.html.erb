@@ -40,10 +40,8 @@
                 </p>
               </td>
           </thead>
-          <tbody>
-            <div class='js-items'>
+          <tbody id="list-table">
               <%= render partial: 'items/item', collection: @items, locals: { list: @list } %>
-            </div>
           </tbody>
         </table>
     <% end %>

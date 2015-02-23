@@ -4,5 +4,5 @@ $('#comment-' +<%= @item.id %>).hide();
 <% if @comment.destroyed? %>
   $('#comment-' +<%= @comment.id %>).hide();
 <% else %>
-  $('#comment-' +<%= @comment.id %>).prepend("div class='alert alert-danger'><%= flash[:error] %></div>");
+  $('#flash-message').html("<%= escape_javascript(render partial: 'common/flash') %>");
 <% end %>

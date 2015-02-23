@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     # @item.list = @list
 
     if @item.save
-      flash[:notice] = "ToDo item added to List."
+      flash.now[:notice] = "ToDo item added to List."
     else
       flash[:error] = "There was an error adding an item to the list."
     end
