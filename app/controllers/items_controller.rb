@@ -14,10 +14,8 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "ToDo item added to List."
-      # redirect_to @list
     else
       flash[:error] = "There was an error adding an item to the list."
-      # redirect_to @list
     end
 
     respond_with(@item) do |format|

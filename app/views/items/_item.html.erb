@@ -1,11 +1,25 @@
 
+<!-- class="warning" -->
 
-
-    <div class='row'>
-      <p> <%= item.name %>
-        <small>
-          <i> <%= item.days_left %> days left </i>
-            <%= link_to "", [list, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
-        </small>
+  <tr>
+    <td>
+      <p class="text-center">
+        <%= item.name %>
       </p>
-    </div>
+    </td>
+    <% if item.days_left < 2 %>
+      <td class="warning">
+    <% else %>
+      <td>
+    <% end %>
+      <p class="text-center">
+        <i> <%= item.days_left %> days left </i>
+      </p>
+    </td>
+
+    <td>
+      <p class="text-center">
+        <%= link_to "", [list, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
+      </p>
+    </td>
+  </tr>
