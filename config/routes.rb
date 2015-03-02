@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'lists/show'
 
-  root to: 'lists#show'
+  root to: 'welcome#index'
 
 end

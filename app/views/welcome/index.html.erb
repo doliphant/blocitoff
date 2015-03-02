@@ -4,9 +4,17 @@
 
   <div class="jumbotron">
     <h1>BlocitOFF</h1>
-    <p>BlocitOFF! For moving on from the little things...</p>
-    <p>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
-      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
-    </p>
+
+    <p>For moving on from the little things...</p>
+
+    <% if current_user %>
+      <p>
+        Hello <%= current_user.email %>! Lets check out your <b><%= link_to "ToDo! List", lists_show_path %></b>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+      </p>
+    <% end %>
   </div>
