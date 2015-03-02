@@ -12,6 +12,7 @@ end
 
 gem 'whenever', :require => false
 
+gem 'faker'
 
 #securing environment variables
 gem 'figaro', '1.0'
