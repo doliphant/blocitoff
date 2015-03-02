@@ -6,7 +6,9 @@
         <%= item.name %>
       </p>
     </td>
-    <% if item.days_left < 2 %>
+    <% if item.days_left <= 2 %>
+      <td class="danger">
+    <% elsif item.days_left <= 3 %>
       <td class="warning">
     <% else %>
       <td>

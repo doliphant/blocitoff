@@ -3,7 +3,7 @@ before_action :authenticate_user!
 
   def show
     @list = current_user.list
-    @items = @list.items
+    @items = @list.items.default_order
   end
 
   def new
@@ -11,8 +11,6 @@ before_action :authenticate_user!
   end
 
   def create
-    # @list = List.new(params.require(:list).permit(:title))
-    # @list.user = current_user
     @list = current_user.build_list(params.require(:list).permit(:title))
     if @list.save
       flash[:notice] = "List was saved."
