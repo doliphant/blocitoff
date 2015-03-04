@@ -4,7 +4,6 @@ tester = User.new(
   email: 'test_user@example.com',
   password: 'pewfortest'
 )
-tester.skip_confirmation!
 tester.save!
 
 
