@@ -9,8 +9,17 @@
 
     <% if current_user %>
       <p>
-        Hello <%= current_user.email %>! Lets check out your <b><%= link_to "ToDo! List", lists_show_path %></b>
+        Hello <%= current_user.email %>!
       </p>
+
+        <% if current_user.list.nil? %>
+          <p>
+            You have nothing ToDo! Lets <b><%= link_to "Get Started.", new_list_path %></b>
+          </p>
+        <% else %>
+          <p>Lets check out your <b><%= link_to "ToDo! List", lists_show_path %></b></p>
+        <% end %>
+
     <% else %>
       <p>
         <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
