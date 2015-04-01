@@ -1,7 +1,7 @@
 
 
 <% if current_user.list != nil %>
-  <h1> You already have a list, would you like to give it a new titile? </h1>
+  <h1> You already have a list, would you like to give it a new title? </h1>
   <%= current_user.list.title %>
     <br>
   <%= link_to "Edit Title", edit_list_path(current_user.list), class: 'btn btn-success' %>
